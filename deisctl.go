@@ -5,16 +5,16 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/deis/deisctl/backend/fleet"
-	"github.com/deis/deisctl/client"
-	"github.com/deis/deisctl/utils"
+	"github.com/deis/deis/deisctl/backend/fleet"
+	"github.com/deis/deis/deisctl/client"
+	"github.com/deis/deis/deisctl/utils"
 
 	docopt "github.com/docopt/docopt-go"
 )
 
 const (
 	// Version of deisctl client
-	Version string = "0.12.0-dev"
+	Version string = "0.13.0-dev"
 )
 
 func exit(err error, code int) {
@@ -47,11 +47,22 @@ func main() {
 Usage:
   deisctl <command> [<target>...] [options]
 
-Example Commands:
+Commands:
+  deisctl install [<service> | platform]
+  deisctl uninstall [<service> | platform]
+  deisctl list
+  deisctl scale [<service>=<num>]
+  deisctl start [<service> | platform]
+  deisctl stop [<service> | platform]
+  deisctl restart [<service> | platform]
+  deisctl journal <service>
+  deisctl config <component> <get|set> <args>
+  deisctl update
+  deisctl refresh-units
 
+Example Commands:
   deisctl install platform
   deisctl uninstall builder@1
-  deisctl list
   deisctl scale router=2
   deisctl start router@2
   deisctl stop router builder

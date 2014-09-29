@@ -15,8 +15,8 @@ to */var/lib/deis/units* one time.
 
 To change installation options, save the installer directly from one of these links:
 
-[![Download for Linux](http://img.shields.io/badge/download-Linux-brightgreen.svg?style=flat)](https://s3-us-west-2.amazonaws.com/opdemand/deisctl-0.12.0-dev-linux-amd64.run)
-[![Download for Mac OS X](http://img.shields.io/badge/download-Mac%20OS%20X-brightgreen.svg?style=flat)](https://s3-us-west-2.amazonaws.com/opdemand/deisctl-0.12.0-dev-darwin-amd64.run)
+[![Download for Linux](http://img.shields.io/badge/download-Linux-brightgreen.svg?style=flat)](https://s3-us-west-2.amazonaws.com/opdemand/deisctl-0.13.0-dev-linux-amd64.run)
+[![Download for Mac OS X](http://img.shields.io/badge/download-Mac%20OS%20X-brightgreen.svg?style=flat)](https://s3-us-west-2.amazonaws.com/opdemand/deisctl-0.13.0-dev-darwin-amd64.run)
 
 Then run the downloaded file as a shell script. Append `--help` to see what options
 are available.
@@ -66,7 +66,6 @@ Scheduling data containers...
 deis-database-data.service: loaded
 deis-registry-data.service: loaded
 deis-logger-data.service: loaded
-deis-builder-data.service: loaded
 Data containers scheduled.
 Scheduling service containers...
 deis-database@1.service: loaded
@@ -89,7 +88,6 @@ Launching data containers...
 deis-database-data.service: exited
 deis-registry-data.service: exited
 deis-logger-data.service: exited
-deis-builder-data.service: exited
 Data containers launched.
 Launching service containers...
 deis-logger@1.service: running
@@ -146,7 +144,6 @@ The `deisctl` tool provides a number of other commands, including:
 ```console
 $ deisctl list
 UNIT				MACHINE				LOAD	ACTIVE	SUB
-deis-builder-data.service	f936b7a5.../172.17.8.100	loaded	active	exited
 deis-builder@1.service		f936b7a5.../172.17.8.100	loaded	active	running
 deis-cache@1.service		f936b7a5.../172.17.8.100	loaded	active	running
 deis-controller@1.service	f936b7a5.../172.17.8.100	loaded	active	running
@@ -213,6 +210,13 @@ deis-router@1.service: launched
 deis-router@2.service: launched
 deis-router@3.service: launched
 ```
+
+## Unit Search Paths
+
+deisctl looks for unit files in these directories, in this order:
+- the $DEISCTL_UNITS environment variable, if set
+- $HOME/.deis/units
+- /var/lib/deis/units
 
 ## License
 
