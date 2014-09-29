@@ -5,9 +5,9 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/deis/deis/deisctl/backend/fleet"
-	"github.com/deis/deis/deisctl/client"
-	"github.com/deis/deis/deisctl/utils"
+	"github.com/grengojbo/deisctl/backend/fleet"
+	"github.com/grengojbo/deisctl/client"
+	"github.com/grengojbo/deisctl/utils"
 
 	docopt "github.com/docopt/docopt-go"
 )

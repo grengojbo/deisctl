@@ -11,11 +11,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/deis/deis/deisctl/backend"
-	"github.com/deis/deis/deisctl/config"
-	"github.com/deis/deis/deisctl/constant"
-	"github.com/deis/deis/deisctl/update"
-	"github.com/deis/deis/deisctl/utils"
+	"github.com/grengojbo/deisctl/backend"
+	"github.com/grengojbo/deisctl/config"
+	"github.com/grengojbo/deisctl/constant"
+	"github.com/grengojbo/deisctl/update"
+	"github.com/grengojbo/deisctl/utils"
 	"github.com/docopt/docopt-go"
 )
 
